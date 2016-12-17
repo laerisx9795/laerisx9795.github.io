@@ -2,12 +2,12 @@ body {
     background-color: #D8BFD8;
 }
 
-h1 {
+#one {
     color: #800080;
     text-align: center;
 }
 
-p {
+#two {
     font-family: verdana;
     font-size: 20px;
 }

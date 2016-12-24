@@ -4,6 +4,10 @@ body {
     font-family: 'Dancing Script', cursive;
 }
 
+.container{
+    color: #800080;
+}
+
 #one {
     color: #800080;
     text-align: center;

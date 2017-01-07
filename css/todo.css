@@ -1,0 +1,55 @@
+body{
+  background-color: rgb(100,155,100);
+  /*background-image:url(http://i.imgur.com/fbNEY7a.jpg);*/
+  font-family: 'Dancing Script', cursive;
+}
+#DIV{
+  width: 480px;
+  /*text-align: center;*/
+  padding: 25px 50px 100px 50px;
+  /*順序:上 右 下 左*/
+  /*border: 5px solid yellow;*/
+  /*background-color: white;*/
+  background-color: rgba(255,255,255,0.5);
+  /*透明:rgba(R,G,B,透明度(0~1)*/
+  border-radius: 10px;
+  /*左上 右上 右下 左下*/
+  margin:auto;
+  /*box-shadow: 10px 10px 5px rgb(100,100,100);*/
+  /*畫圓:width height相同 border-radius:50%*/
+}
+
+/*h1{
+  font-family: 'Indie Flower', cursive;
+}*/
+
+.btn-group{
+  clear:both;
+  float:right;
+}
+
+/*.clear-float{
+  clear:both;
+}*/
+
+/*float:方向 => 向左或向右移動*/
+
+/*rgb 三者數值相同則為無彩色*/
+
+#DIV2{
+  background-color: rgba(255,255,255,0.4);
+  border-radius: 10px;
+  padding: 10px;
+}
+
+.LIST{
+  background-color: rgba(255,255,255,0.4);
+  border-radius: 10px;
+  padding: 10px;
+}
+
+#DIV3{
+  background-color: rgba(255,255,255,0.4);
+  border-radius: 10px;
+  padding: 10px;
+}

@@ -1,1 +1,42 @@
-
+<!DOCTYPE html>
+<html>
+<head>
+  <link href="https://fonts.googleapis.com/css?family=Dancing+Script" rel="stylesheet">
+  <meta name="description" content="TODO List - Template">
+  <meta charset="utf-8">
+  <title>TODO List</title>
+  <script src="https://code.jquery.com/jquery-2.2.4.js"></script>
+</head>
+<body>
+  <div id="DIV">
+    <h1>TODO List</h1>
+    <div id="DIV2">
+      <input id="IPT" type="text" />
+      <button id="BT" >加入</button>
+    </div>
+    <!--<div class="clear-float"></div>-->
+    <div id="DIV4">
+      <ul id="SP" style="list-style: none">
+        <li class="LIST">
+          <label>
+            <input class="TCK" type="checkbox">
+            <span class="task-content">TEST</span>
+          </label>
+          <div class="btn-group">
+            <button class="editThis">編輯</button>
+            <button class="js-delete-button">刪除</button>
+          </div>
+         </li>
+      </ul>
+      <div id="DIV3">
+        還有<span id="NUM">0</span>個未完成事項
+        <button id="Del">刪除已完成事項</button>
+        <hr>
+        <button id="already">顯示已完成事項</button>
+        <button id="yet">顯示未完成事項</button>
+        <button id="all">顯示所有事項</button>
+      </div>
+     </div>
+  </div>
+</body>
+</html>

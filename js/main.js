@@ -22,8 +22,10 @@ function check(){
   var monthOpt = $("checkbox#month");
   var months =[];
   for(var i=0;i<monthOpt.lenth;i++){
+    console.log(i);
     if($("checkbox#month").prop("checked")){
       months.push($("checkbox#month").val());
+      console.log(i+100);
     }
   }
   if(talk)

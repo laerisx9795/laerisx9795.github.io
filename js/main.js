@@ -28,5 +28,5 @@ function check(){
   }
 }
 
-alert("month:"+monthOpt.join());
+alert("month:"+months.join());
 $("#BT").on("click", check);

@@ -4,4 +4,8 @@ alert("Hello,"+userName);
 
 var name =$("input#a").val();
 
-alert("Hello,"+name);
+function hello(){
+  alert("Hello,"+name);
+}
+
+$("#BT").on("click",hello);

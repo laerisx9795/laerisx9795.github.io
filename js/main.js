@@ -16,3 +16,11 @@ function isEnterPressed(event){
 }
 
 $("input#userNameIn").on("keypress",isEnterPressed);
+
+function check(){
+  var talk=true;
+  var languageOpt = $("checkbox#month").prop("checked");
+  alert("month:"+languaeOpt.join());
+}
+
+$("#BT").on("click", check);

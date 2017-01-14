@@ -26,6 +26,8 @@ function check(){
       months.push($("checkbox#month").val());
     }
   }
+  if(talk)
+    alert("month:"+months.join());
 }
 
 alert("month:"+months.join());

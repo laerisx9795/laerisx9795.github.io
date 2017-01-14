@@ -21,7 +21,7 @@ function check(){
   var talk=true;
   var monthOpt = $("checkbox#month");
   var months =[];
-  for(var i=0;i<monthOpt.lenth;i++){
+  for(var i=0;i<monthOpt.length;i++){
     console.log(i);
     if($(monthOpt[i]).prop("checked")){
       months.push($(monthOpt[i]).val());

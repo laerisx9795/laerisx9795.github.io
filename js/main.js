@@ -1,3 +1,3 @@
-var userName = $(input).val();
+var userName = $("input#userNameIn").val();
 
-var 
+alert("Hello,"+userName);

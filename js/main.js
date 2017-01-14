@@ -3,8 +3,8 @@
 alert("Hello,"+userName);
 */
 function hello(){
-  var name =$("input#a").val();
+  var name =$("#a").val();
   alert("Hello,"+name);
 }
 
-$("button#BT").on("click",hello);
+$("#BT").on("click",hello);

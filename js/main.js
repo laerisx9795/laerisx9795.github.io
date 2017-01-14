@@ -1,10 +1,9 @@
-updateNum();
 //console.log("1");
 function Hello(){
   var userName = $("input#userNameIn").val();
   alert("Hello,"+userName);
   //console.log("2");
-  updateNum();
+  $("#IPT").val("");
 }
 
 $("#signUp").on("click", Hello);

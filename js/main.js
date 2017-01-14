@@ -14,7 +14,6 @@ function isEnterPressed(event){
   if(event.which == 13){
     Hello();
   }
-  updateNum();
 }
 
 $("input#userNameIn").on("keypress",isEnterPressed);

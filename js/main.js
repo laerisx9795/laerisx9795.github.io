@@ -3,7 +3,7 @@ function Hello(){
   var userName = $("input#userNameIn").val();
   alert("Hello,"+userName);
   //console.log("2");
-  $("#IPT").val("");
+  $("input#userNameIn").val("");
 }
 
 $("#signUp").on("click", Hello);

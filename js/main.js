@@ -2,9 +2,9 @@
 
 //alert("Hello,"+userName);
 
-function hello(){
+function Hello(){
   var name =$("input#a").val();
   alert("Hello,"+name);
 }
 
-$("#BT").on("click",hello);
+$("#BT").on("click", Hello);

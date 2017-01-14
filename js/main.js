@@ -30,6 +30,7 @@ function check(){
   }
   if(talk)
     alert("month:"+months.join());
+  $("#month").val("")
 }
 
 $("#BT").on("click", check);

@@ -7,4 +7,4 @@ function hello(){
   alert("Hello,"+name);
 }
 
-$("#BT").on("click",hello);
+$("button#BT").on("click",hello);

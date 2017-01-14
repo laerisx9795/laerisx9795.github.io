@@ -30,5 +30,4 @@ function check(){
     alert("month:"+months.join());
 }
 
-alert("month:"+months.join());
 $("#BT").on("click", check);

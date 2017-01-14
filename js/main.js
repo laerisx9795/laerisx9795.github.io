@@ -19,8 +19,14 @@ $("input#userNameIn").on("keypress",isEnterPressed);
 
 function check(){
   var talk=true;
-  var languageOpt = $("checkbox#month").prop("checked");
-  alert("month:"+languaeOpt.join());
+  var monthOpt = $("checkbox#month");
+  var months =[];
+  for(var i=0;i<monthOpt.lenth;i++){
+    if($("checkbox#month").prop("checked")){
+      months.push($("checkbox#month").val());
+    }
+  }
 }
 
+alert("month:"+monthOpt.join());
 $("#BT").on("click", check);

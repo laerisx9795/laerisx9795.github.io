@@ -3,7 +3,7 @@
 //alert("Hello,"+userName);
 
 function hello(){
-  var name =$("#a").val();
+  var name =$("input#a").val();
   alert("Hello,"+name);
 }
 

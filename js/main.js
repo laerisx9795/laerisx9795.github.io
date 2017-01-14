@@ -1,7 +1,7 @@
-/*var userName = $("input#userNameIn").val();
+//var userName = $("input#userNameIn").val();
 
-alert("Hello,"+userName);
-*/
+//alert("Hello,"+userName);
+
 function hello(){
   var name =$("#a").val();
   alert("Hello,"+name);

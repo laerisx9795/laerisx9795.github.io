@@ -22,15 +22,12 @@ function check(){
   var monthOpt = $("input#month");
   var months =[];
   for(var i=0;i<monthOpt.length;i++){
-    console.log(i);
     if($(monthOpt[i]).prop("checked")){
       months.push($(monthOpt[i]).val());
-      console.log(i+100);
     }
   }
   if(talk)
     alert("month:"+months.join());
-  $($("#month").prop("checked")).val("");
 }
 
 $("#BT").on("click", check);

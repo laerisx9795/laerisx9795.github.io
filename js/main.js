@@ -23,8 +23,8 @@ function check(){
   var months =[];
   for(var i=0;i<monthOpt.lenth;i++){
     console.log(i);
-    if($("checkbox#month").prop("checked")){
-      months.push($("checkbox#month").val());
+    if($(monthOpt[i]).prop("checked")){
+      months.push($(monthOpt[i]).val());
       console.log(i+100);
     }
   }

@@ -31,3 +31,10 @@ function check(){
 }
 
 $("#BT").on("click", check);
+
+function change(){
+  $(".Page1").closest("div").show();
+  $(".Home").closest("div").hide();
+}
+
+$("#pageOne").on("click", change);

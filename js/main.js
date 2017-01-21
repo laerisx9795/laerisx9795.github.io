@@ -32,9 +32,16 @@ function check(){
 
 $("#BT").on("click", check);
 
-function change(){
-  $(".Page1").closest("div").show();
-  $(".Home").closest("div").hide();
+function pageone(){
+  $("div#Page1").show();
+  $("div#Home").hide();
 }
 
-$("#pageOne").on("click", change);
+//$("#pageOne").on("click", pageone);
+
+function home(){
+  $("div#Page1").hide();
+  $("div#Home").show();
+}
+
+//$("#HOME").on("click", home);

@@ -37,11 +37,11 @@ function pageone(){
   $("div#Home").hide();
 }
 
-//$("#pageOne").on("click", pageone);
+$("#pageOne").on("click", pageone);
 
 function home(){
   $("div#Page1").hide();
   $("div#Home").show();
 }
 
-//$("#HOME").on("click", home);
+$("#HOME").on("click", home);

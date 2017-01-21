@@ -143,6 +143,8 @@
     var fdb = new ForerunnerDB();
     var db = fdb.db("ハロ");
     var haroCollection = db.collection('Haro');
+    haroCollection.save();
+    haroCollection.load();
   </script>
 </body>
 </html>

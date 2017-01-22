@@ -23,11 +23,11 @@
       <li class="dropdown">
         <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Dropdown <span class="caret"></span></a>
         <ul class="dropdown-menu">
-          <li><a href="#">不要點<!--Action--></a></li>
-          <li><a href="#">因為<!--Another action--></a></li>
-          <li><a href="#">點了也沒用<!--Something else here--></a></li>
+          <li><a href="#" data-toggle="tab">不要點<!--Action--></a></li>
+          <li><a href="#" data-toggle="tab">因為<!--Another action--></a></li>
+          <li><a href="#" data-toggle="tab">點了也沒用<!--Something else here--></a></li>
           <li role="separator" class="divider"></li>
-          <li><a href="#">裡面又沒東西<!--Separated link--></a></li>
+          <li><a href="#" data-toggle="tab">裡面又沒東西<!--Separated link--></a></li>
         </ul>
       </li>
       <li><a href="http://www1.cpshs.hcc.edu.tw/information/">竹北資科</a></li>
@@ -43,9 +43,9 @@
     </div>
     <div class="collapse navbar-collapse navbar-collapse-center" id="myNavbar">
       <ul class="nav navbar-nav">
-        <li class="active"><a href="#" id="HOME" onclick="home()">Home</a></li>
-        <li><a href="#" id="pageOne" onclick="pageone()">Page 1</a></li>
-        <li><a href="#">Page 2</a></li>
+        <li class="active"><a href="#" id="HOME" onclick="home()" data-toggle="tab">Home</a></li>
+        <li><a href="#" id="pageOne" onclick="pageone()" data-toggle="tab">Page 1</a></li>
+        <li><a href="#" data-toggle="tab">Page 2</a></li>
       </ul>
       <ul class="nav navbar-nav navbar-right">
         <li>
@@ -114,33 +114,35 @@
      </div>
    </div>
 </nav>
-  <div class="Home">
-    <div>
-      <h1 class="one">NXT diary</h1>
-    </div>
-    <div class="container"> <!-- container 在最外層  col-xs-12-->
-      <div class="row">     <!-- row 在中間 -->
-        <div class="col-xs-12 col-md-5">
-          <img id="NXT" src="images/IMAG0307.jpg">
-          <h4 class="two">竹北高中資訊科小高一</h4>
-          <h4 class="two">信心滿滿的報名了循跡自走車比賽</h4>
-          <h4 class="two">結果差一秒完賽 QQ</h4>
-        </div>
-        <div class="col-xs-12 col-md-2">
-          <a href="http://www1.cpshs.hcc.edu.tw/information/" class="btn btn-primary">竹北資訊科</a><br>
-          <input type="checkbox" id="month" value='3月'/><h3>3月</h3><br>
-          <input type="checkbox" id="month" value='6月'/><h3>6月</h3><br>
-          <input type="checkbox" id="month" value='9月'/><h3>9月</h3><br>
-          <input type="checkbox" id="month" value='12月'/><h3>12月</h3><br>
-          <button type="button" id="BT">はい</button>
-        </div>
-        <div class="col-xs-12 col-md-5">
-          <h4 class="1224">Finish.</h4>
+  <div id="myTabContent" class="tab-content">
+    <div class="tab-pane fade in active" id="home">
+      <div>
+        <h1 class="one">NXT diary</h1>
+      </div>
+      <div class="container"> <!-- container 在最外層  col-xs-12-->
+        <div class="row">     <!-- row 在中間 -->
+          <div class="col-xs-12 col-md-5">
+            <img id="NXT" src="images/IMAG0307.jpg">
+            <h4 class="two">竹北高中資訊科小高一</h4>
+            <h4 class="two">信心滿滿的報名了循跡自走車比賽</h4>
+            <h4 class="two">結果差一秒完賽 QQ</h4>
+          </div>
+          <div class="col-xs-12 col-md-2">
+            <a href="http://www1.cpshs.hcc.edu.tw/information/" class="btn btn-primary">竹北資訊科</a><br>
+            <input type="checkbox" id="month" value='3月'/><h3>3月</h3><br>
+            <input type="checkbox" id="month" value='6月'/><h3>6月</h3><br>
+            <input type="checkbox" id="month" value='9月'/><h3>9月</h3><br>
+            <input type="checkbox" id="month" value='12月'/><h3>12月</h3><br>
+            <button type="button" id="BT">はい</button>
+          </div>
+          <div class="col-xs-12 col-md-5">
+            <h4 class="1224">Finish.</h4>
+          </div>
         </div>
       </div>
-    </div>
+     </div>
   </div>
-  <div class="Page1">
+  <div class="tab-pane fade" id="page1">
     <div>
       <h1 class="one">TODOList</h1>
     </div>

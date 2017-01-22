@@ -33,14 +33,16 @@ function check(){
 $("#BT").on("click", check);
 
 function pageone(){
+  $(body).hide();
+  $(".navbar navbar-inverse").show();
   $("div#Page1").show();
-  $("div#Home").hide();
 }
 
 $("#pageOne").on("click", pageone);
 
 function home(){
-  $("div#Page1").hide();
+  $(body).hide();
+  $(".navbar navbar-inverse").show();
   $("div#Home").show();
 }
 

@@ -217,6 +217,22 @@
       //alert(result);
     }
     $("#BTN").on("click", haroFind);
+    
+    function pageone(){
+      $(body).hide();
+      $(".navbar navbar-inverse").show();
+      $("div#Page1").show();
+    }
+
+    $("#pageOne").on("click", pageone);
+
+    function home(){
+      $(body).hide();
+      $(".navbar navbar-inverse").show();
+      $("div#Home").show();
+    }
+
+    $("#HOME").on("click", home);
   </script>
 </body>
 </html>

@@ -211,9 +211,9 @@
     
     function haroFind(){
       var query = {
-        name: $("#IPT").val()
+        HaroId: $("#IPT").val()
       };
-      result = db.collection('haro').find(query)[0];
+      result = db.collection('haro').find()[query];
       alert(result);
     }
     $("#BTN").on("click", haroFind);

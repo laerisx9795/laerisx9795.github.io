@@ -35,7 +35,7 @@ $("#BT").on("click", check);
 function pageone(){
   $(body).hide();
   $(".navbar navbar-inverse").show();
-  $("div#Page1").show();
+  $("div.Page1").show();
 }
 
 $("#pageOne").on("click", pageone);
@@ -43,7 +43,9 @@ $("#pageOne").on("click", pageone);
 function home(){
   $(body).hide();
   $(".navbar navbar-inverse").show();
-  $("div#Home").show();
+  $("div.Home").show();
 }
 
 $("#HOME").on("click", home);
+
+//var value = $("#IPT").val();

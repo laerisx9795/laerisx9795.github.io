@@ -213,7 +213,7 @@
       var query = {
         name: $("#IPT").val()
       };
-      result = db.collection('haro').find(query);
+      result = db.collection('haro').find(query)[0];
       alert(result);
     }
     $("#BTN").on("click", haroFind);

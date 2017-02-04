@@ -211,7 +211,7 @@
     
     function haroFind(){
       var query = {
-        HaroId: $("#IPT").val()
+        Owner: $("#IPT").val()
       };
       result = db.collection('Haro').find(query);
       alert(result);

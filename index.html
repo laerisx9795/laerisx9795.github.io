@@ -148,12 +148,12 @@
                 </tr>
               </thead>
               <tbody>
-                <tr>
+                <!--<tr>
                   <td>1</td>
                   <td>Green Haro</td>
                   <td>Amuro</td>
                   <td>Gundam</td>
-                </tr>
+                </tr>-->
               </tbody>
             </table>
           </div>
@@ -182,13 +182,17 @@
     var db = fdb.db("ハロ");
     var haroCollection = db.collection('Haro');
     haroCollection.load();
-    $("div#HARO").hide();
+    $("table#HARO").hide();
     
     function haroShow(){
       console.log("ハロ");
       //haroCollection.load();
       //haroCollection.find();
-      $("div#HARO").show();
+      $("table#HARO").show();
+      for(var i=0;i<haroCollection.length;i++){
+        var haro = "<tr><td>"+haroCollection.find()[i].HaroId+"</td><td>"+haroCollection.find()[i].name+"</td><td>"+haroCollection.find()[i].Owner+"</td></tr>";
+        $("tbody").append(haro);
+      }
     }
 
     $("#BTN2").on("click", haroShow);

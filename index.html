@@ -189,7 +189,7 @@
       $("tbody").text("");
       $("table#HARO").show();
       for(var i=0;i<haroCollection.find().length;i++){
-        var haro = "<tr><td>"+haroCollection.find()[i].HaroId+"</td><td>"+haroCollection.find()[i].name+"</td><td>"+haroCollection.find()[i].Owner+"</td></tr>";
+        var haro = "<tr><td>"+haroCollection.find()[i].HaroId+"</td><td>"+haroCollection.find()[i].name+"</td><td>"+haroCollection.find()[i].Owner+"</td><td>"+haroCollection.find()[i].Siries+"</td></tr>";
         $("tbody").append(haro);
       }
     }

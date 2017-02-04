@@ -186,11 +186,10 @@
     
     function haroShow(){
       console.log("ハロ");
-      //haroCollection.load();
-      //haroCollection.find();
+      $("tbody").text();
       $("table#HARO").show();
-      for(var i=0;i<haroCollection.length;i++){
-        var haro = "<tr><td>"+haroCollection.find()[i].HaroId+"</td><td>"+haroCollection.find()[i].name+"</td><td>"+haroCollection.find()[i].Owner+"</td></tr>";
+      for(var i=0;i<haroCollection.find().length;i++){
+        var haro = "<tr><td>"+haroCollection.find()[i].HaroId+"</td><td>"+haroCollection.find()[i].haroId+"</td><td>"+haroCollection.find()[i].name+"</td><td>"+haroCollection.find()[i].Owner+"</td></tr>";
         $("tbody").append(haro);
       }
     }

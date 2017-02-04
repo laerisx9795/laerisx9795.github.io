@@ -137,17 +137,22 @@
           </div>
           <div class="col-xs-12 col-md-5">
             <!--<h4 class="1224">Finish.</h4>-->
-            <table>
+            <input type="text" id="IPT"/><button type="button" id="BTN">はい</button><button type="button" id="BTN2">LOAD</button>
+            <table id="HARO">
               <thead>
                 <tr>
-                  <td>id</td>
-                  <td>姓名</td>
+                  <td>ID</td>
+                  <td>Name</td>
+                  <td>Owner</td>
+                  <td>Siries</td>
                 </tr>
               </thead>
               <tbody>
                 <tr>
                   <td>1</td>
-                  <td>Orange</td>
+                  <td>Green Haro</td>
+                  <td>Amuro</td>
+                  <td>Gundam</td>
                 </tr>
               </tbody>
             </table>
@@ -177,6 +182,16 @@
     var db = fdb.db("ハロ");
     var haroCollection = db.collection('Haro');
     haroCollection.load();
+    $("div#HARO").hide();
+    
+    function haroShow(){
+      haroCollection.load();
+      //haroCollection.find();
+      $("div#HARO").show();
+    }
+
+    $("#BTN2").("click", haroShow);
+
   </script>
 </body>
 </html>

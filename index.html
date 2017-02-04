@@ -213,7 +213,8 @@
       var query = {
         Owner: $("#IPT").val()
       };
-      result = db.collection('Haro').find(query)[0];
+      //result = db.collection('Haro').find(query);
+      result = haroCollection.find(query);
       alert(result);
     }
     $("#BTN").on("click", haroFind);

@@ -211,14 +211,14 @@
     
     function haroFind(){
       var query = {
-        HaroId: $("#IPT").value()
+        HaroId: $("#IPT").value();
       };
       result = DB.collection("haro").find(query);
-      //alert(result);
+      alert(result);
     }
     $("#BTN").on("click", haroFind);
     
-    function pageone(){
+    /*function pageone(){
       $(body).hide();
       $(".navbar navbar-inverse").show();
       $("div#Page1").show();
@@ -232,7 +232,7 @@
       $("div#Home").show();
     }
 
-    $("#HOME").on("click", home);
+    $("#HOME").on("click", home);*/
   </script>
 </body>
 </html>

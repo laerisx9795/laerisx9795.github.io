@@ -226,11 +226,21 @@
     function haroDelete(){
       //haroCollection.closet().remove();
       $(this).closest("tr").remove();
-      console.log("X");
+      //console.log("X");
     }
     $("#HARO").on("click","#BT4",haroDelete);
     //$("#BT4").on("click",haroDelete);
     //haroCollection.save;
+    
+    function disp_confirm(){
+      var r=confirm("Press a button")
+      if (r==true){
+        document.write("You pressed OK!")
+      }else{
+        document.write("You pressed Cancel!")
+      }
+    }
+    <input type="button" onclick="disp_confirm()" value="Display a confirm box" />
     /*function pageone(){
       $(body).hide();
       $(".navbar navbar-inverse").show();

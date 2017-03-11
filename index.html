@@ -222,12 +222,14 @@
     }
     $("#BTN").on("click", haroFind);
     
+    
     function haroDelete(){
       //haroCollection.closet().remove();
       $(this).closest("td").remove();
       console.log("X");
     }
-    $("#BT4").on("click",haroDelete);
+    $("#HARO").on("click","#BT4",haroDelete);
+    //$("#BT4").on("click",haroDelete);
     //haroCollection.save;
     /*function pageone(){
       $(body).hide();

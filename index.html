@@ -140,36 +140,21 @@
             <input type="text" id="IPT"/><button type="button" id="BTN">はい</button><button type="button" id="BTN2">LOAD</button>
             <table id="HARO" class="table">
               <thead>
-                <!-- On rows 
-                  <tr class="active"></tr>
-                  <tr class="success"></tr>
-                  <tr class="warning"></tr>
-                  <tr class="danger"></tr>
-                  <tr class="info"></tr>-->
-
-                <!-- On cells (`td` or `th`)  
-                  <tr>
-                    <td class="active">ID</td>
-                    <td class="success">Name</td>
-                    <td class="warning">Owner</td>
-                    <td class="danger">Siries</td>
-                    <td class="info">Else</td>
-                  </tr>-->
                 <tr>
                   <td>ID</td>
                   <td>Name</td>
                   <td>Owner</td>
                   <td>Siries</td>
-                  <td>Delete</td>
+                  <td>Settings</td>
                 </tr>
               </thead>
               <tbody>
-                <tr>
+                <!--<tr>
                   <td>34</td>
                   <td>Haro</td>
                   <td>???</td>
                   <td>Gundam</td>
-                </tr>
+                </tr>-->
               </tbody>
             </table>
           </div>
@@ -205,7 +190,7 @@
       $("tbody").text("");
       $("table#HARO").show();
       for(var i=0;i<haroCollection.find().length;i++){
-        var haro = "<tr><td>"+haroCollection.find()[i].HaroId+"</td><td>"+haroCollection.find()[i].name+"</td><td>"+haroCollection.find()[i].Owner+"</td><td>"+haroCollection.find()[i].Siries+"</td></tr>";
+        var haro = "<tr><td>"+haroCollection.find()[i].HaroId+"</td><td>"+haroCollection.find()[i].name+"</td><td>"+haroCollection.find()[i].Owner+"</td><td>"+haroCollection.find()[i].Siries+"</td><td><button type="button" id="BTN4">Delete</button></td></tr>";
         $("tbody").append(haro);
       }
     }

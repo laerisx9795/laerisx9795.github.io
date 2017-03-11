@@ -218,10 +218,10 @@
       //result = db.collection('Haro').find(query);
       result = haroCollection.find(query);
       //console.log(result);
-      Result = $(result).text();
-      alert(Result);
+      alert("ID:"+result.text(HaroID)+"Name:"+result.text(name)+"Owner:"+result.text(Owner)+"Siries:"+result.text(Siries));
     }
     $("#BTN").on("click", haroFind);
+    
     
     
     function haroDelete(){

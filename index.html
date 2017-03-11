@@ -191,7 +191,7 @@
       $("tbody").text("");
       $("table#HARO").show();
       for(var i=0;i<haroCollection.find().length;i++){
-        var haro = "<tr><td>"+haroCollection.find()[i].HaroId+"</td><td>"+haroCollection.find()[i].name+"</td><td>"+haroCollection.find()[i].Owner+"</td><td>"+haroCollection.find()[i].Siries+"</td><td><button type=\"button\" class=\"btn btn-default\" id=\"BT4\" value=\"Display a confirm box\">Delete</button></td></tr>";
+        var haro = "<tr><td>"+haroCollection.find()[i].HaroId+"</td><td>"+haroCollection.find()[i].name+"</td><td>"+haroCollection.find()[i].Owner+"</td><td>"+haroCollection.find()[i].Siries+"</td><td><button type=\"button\" class=\"btn btn-default\" id=\"BT4\" value=\"Display a confirm box" 'data-id='+haroCollection.find()[i]._id'>'Delete"</button></td></tr>";
         $("tbody").append(haro);
       }
     }
@@ -228,7 +228,9 @@
       var r=confirm("你確定要刪除嗎？")
       if (r==true){
       //haroCollection.closet().remove();
+        //id=$(this).data();
         $(this).closest("tr").remove();
+        //$(this).data()
       }
       //console.log("X");
     }

@@ -216,7 +216,8 @@
       //result = db.collection('Haro').find(query);
       result = haroCollection.find(query);
       //console.log(result);
-      alert($(result).text());
+      Result = $(result).text();
+      alert(Result);
     }
     $("#BTN").on("click", haroFind);
     

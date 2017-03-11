@@ -190,7 +190,7 @@
       $("tbody").text("");
       $("table#HARO").show();
       for(var i=0;i<haroCollection.find().length;i++){
-        var haro = "<tr><td>"+haroCollection.find()[i].HaroId+"</td><td>"+haroCollection.find()[i].name+"</td><td>"+haroCollection.find()[i].Owner+"</td><td>"+haroCollection.find()[i].Siries+"</td><td><button type=button id=BTN4 class=btn btn-info>Delete</button></td></tr>";
+        var haro = "<tr><td>"+haroCollection.find()[i].HaroId+"</td><td>"+haroCollection.find()[i].name+"</td><td>"+haroCollection.find()[i].Owner+"</td><td>"+haroCollection.find()[i].Siries+"</td><td><button type=\"button\" class=\"btn btn-default\" id=\"BT4\">Delete</button></td></tr>";
         $("tbody").append(haro);
       }
     }
@@ -222,6 +222,12 @@
     }
     $("#BTN").on("click", haroFind);
     
+    function haroDelete(){
+      //haroCollection.closet().remove();
+      $(this).closest("td").remove();
+    }
+    $("#BT4").on("click",haroDelete);
+    //haroCollection.save;
     /*function pageone(){
       $(body).hide();
       $(".navbar navbar-inverse").show();

@@ -169,9 +169,6 @@
               </div>
             </li>
             <li>
-              <a data-toggle="modal" data-target="#myModal4" href="#">
-                Edit
-              </a>
             <div class="modal fade" id="myModal4" tabindex="-1" role="dialog" aria-labelledby="myModalLabel4">
               <div class="modal-dialog" role="document">
                 <div class="modal-content">
@@ -251,7 +248,7 @@
       $("tbody").text("");
       $("table#HARO").show();
       for(var i=0;i<haroCollection.find().length;i++){
-        var haro = "<tr><td>"+haroCollection.find()[i].HaroId+"</td><td>"+haroCollection.find()[i].name+"</td><td>"+haroCollection.find()[i].Owner+"</td><td>"+haroCollection.find()[i].Siries+"</td><td><button type=\"button\" class=\"btn btn-default\" id=\"BT4\" value=\"Display a confirm box\">Delete</button></td><td><button type=\"button\" class=\"btn btn-default\" id=\"BT5\" data-target=\"#myModal4\">Edit</button></td></tr>";
+        var haro = "<tr><td>"+haroCollection.find()[i].HaroId+"</td><td>"+haroCollection.find()[i].name+"</td><td>"+haroCollection.find()[i].Owner+"</td><td>"+haroCollection.find()[i].Siries+"</td><td><button type=\"button\" class=\"btn btn-default\" id=\"BT4\" value=\"Display a confirm box\">Delete</button></td><td><button typr=\"button\" data-toggle=\"modal\" data-target=\"#myModal4\" href=\"#\" id=\"BT5\" class=\"btn btn-default\">Edit</a></td></tr>";
         $("tbody").append(haro);
       }
     }

@@ -291,13 +291,13 @@
     //$("#BT4").on("click",haroDelete);
     //haroCollection.save;
     
-    /*function haroEdit(){
-      $("#haroIdEdit").val($(this).closest("tr").text());
-      $("#nameEdit").val();
-      $("#ownerEdit").val();
-      $("#siriesEdit").val();
+    function haroEdit(){
+      $("#haroIdEdit").val($(this).closest("tr").text(HaroId));
+      $("#nameEdit").val($(this).closest("tr").text(name));
+      $("#ownerEdit").val($(this).closest("tr").text(Owner));
+      $("#siriesEdit").val($(this).closest("tr").text(Siries));
     }
-    $("#HARO").on("click","#BT5",haroEdit);*/
+    $("#HARO").on("click","#BT5",haroEdit);
     function haroSave(){
       var e=confirm("你確定要編輯嗎？")
       var num = $(this).closest("tr").text(HaroId);

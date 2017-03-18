@@ -297,7 +297,7 @@
       var query = {
         _id: editDataId
       };
-      $("input#haroIdEdit").val(haroCollection.find(query)[0].HaroId);
+      $("input#haroIdEdit").val(haroCollection.find(query)[0]._id);
       $("input#nameEdit").val(haroCollection.find(query)[0].name);
       $("input#ownerEdit").val(haroCollection.find(query)[0].Owner);
       $("input#siriesEdit").val(haroCollection.find(query)[0].Siries);

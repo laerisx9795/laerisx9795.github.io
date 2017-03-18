@@ -292,10 +292,10 @@
     //haroCollection.save;
     
     function haroEdit(){
-      $("#haroIdEdit").val()=$(this).closest("tr").text(HaroId);
-      $("#nameEdit").val()=$(this).closest("tr").text(name);
-      $("#ownerEdit").val()=$(this).closest("tr").text(Owner);
-      $("#siriesEdit").val()=$(this).closest("tr").text(Siries);
+      $("#haroIdEdit").defaultval()=$(this).closest("tr").text(HaroId);
+      $("#nameEdit").defaultval()=$(this).closest("tr").text(name);
+      $("#ownerEdit").defaultval()=$(this).closest("tr").text(Owner);
+      $("#siriesEdit").defaultval()=$(this).closest("tr").text(Siries);
     }
     $("#HARO").on("click","#BT5",haroEdit);
     function haroSave(){

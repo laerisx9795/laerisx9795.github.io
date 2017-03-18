@@ -238,6 +238,7 @@
     var haroCollection = db.collection('Haro');
     haroCollection.load();
     $("table#HARO").hide();
+    var editDataId;
     
     function haroShow(){
       //console.log("ハロ");
@@ -297,7 +298,7 @@
       var query = {
         _id: editDataId
       };
-      $("input#haroIdEdit").val(haroCollection.find(query)[0]._id);
+      $("input#haroIdEdit").val(haroCollection.find(query)[0].);
       $("input#nameEdit").val(haroCollection.find(query)[0].name);
       $("input#ownerEdit").val(haroCollection.find(query)[0].Owner);
       $("input#siriesEdit").val(haroCollection.find(query)[0].Siries);
@@ -306,7 +307,7 @@
     $("#HARO").on("click","#BT5",haroEdit);
     function haroSave(){
       var e=confirm("你確定要編輯嗎？")
-      var num = $(this).closest("tr").text(HaroId);
+      //var num = $(this).closest("tr").text(HaroId);
       if(e==ture){
         var newData = {
           HaroId:$("#haroIdEdit").val(),
@@ -314,7 +315,7 @@
           Owner:$("#ownerEdit").val(),
           Siries:$("#siriesEdit").val()
         };
-        db.haroCollection("haro").updateById("num",newData);
+        db.haroCollection("haro").updateById(editDataId,newData);
       }
       console.log("1");
     }

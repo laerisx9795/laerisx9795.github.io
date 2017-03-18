@@ -291,12 +291,16 @@
     //$("#BT4").on("click",haroDelete);
     //haroCollection.save;
     
-    //function haroEdit(){
-      
-    //}
-    //$("#HARO").on("click","#BT5",haroEdit);
+    /*function haroEdit(){
+      $("#haroIdEdit").val($(this).closest("tr").text());
+      $("#nameEdit").val();
+      $("#ownerEdit").val();
+      $("#siriesEdit").val();
+    }
+    $("#HARO").on("click","#BT5",haroEdit);*/
     function haroSave(){
       var e=confirm("你確定要編輯嗎？")
+      var num = $(this).closest("tr").text(HaroId);
       if(e==ture){
         var newData = {
           HaroId:$("#haroIdEdit").val(),
@@ -304,7 +308,7 @@
           Owner:$("#ownerEdit").val(),
           Siries:$("#siriesEdit").val()
         };
-        db.haroCollection("haro").updateById("",newData);
+        db.haroCollection("haro").updateById("num",newData);
       }
     }
     $("#HARO").on("click","#save",haroSave);

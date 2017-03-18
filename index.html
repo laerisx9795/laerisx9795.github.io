@@ -158,18 +158,18 @@
                     <h4>Owner</h4>
                     <input type="text" id="ownerIn"/>
                     <h4>Siries</h4>
-                    <input type="email" id="siriesIn"/>
+                    <input type="text" id="siriesIn"/>
                   </div>
                   <div class="modal-footer">
                     <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
-                    <button type="button" class="btn btn-primary" id="signUp">Create</button>
+                    <button type="button" class="btn btn-primary" id="create">Create</button>
                   </div>
                  </div>
                 </div>
               </div>
             </li>
             <li>
-              <a data-toggle="modal" data-target="#myModal3" href="#">
+              <a data-toggle="modal" data-target="#myModal4" href="#">
                 Edit
               </a>
             <div class="modal fade" id="myModal4" tabindex="-1" role="dialog" aria-labelledby="myModalLabel4">
@@ -178,21 +178,21 @@
                   <div class="modal-header">
                     <!-- class="close" -->
                     <button type="button" class="btn btn-info" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
-                    <h4 class="modal-title" id="myModalLabel4"><a href="#">Create</a><!--Modal title--></h4>
+                    <h4 class="modal-title" id="myModalLabel4"><a href="#">Edit</a><!--Modal title--></h4>
                   </div>
                   <div class="modal-body">
                     <h4>ID</h4>
-                    <input type="text" id="haroIdIn"/>
+                    <input type="text" id="haroIdEdit"/>
                     <h4>Name</h4>
-                    <input type="text" id="nameIn"/>
+                    <input type="text" id="nameEdit"/>
                     <h4>Owner</h4>
-                    <input type="text" id="ownerIn"/>
+                    <input type="text" id="ownerEdit"/>
                     <h4>Siries</h4>
-                    <input type="email" id="siriesIn"/>
+                    <input type="text" id="siriesEdit"/>
                   </div>
                   <div class="modal-footer">
                     <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
-                    <button type="button" class="btn btn-primary" id="signUp">Save</button>
+                    <button type="button" class="btn btn-primary" id="save">Save</button>
                   </div>
                  </div>
                 </div>
@@ -240,6 +240,7 @@
   </div>
   <script type="text/javascript" src="js/bootstrap.min.js"></script>
   <script>
+    $("#myModal4").hide();
     var fdb = new ForerunnerDB();
     var db = fdb.db("ハロ");
     var haroCollection = db.collection('Haro');
@@ -297,6 +298,25 @@
     $("#HARO").on("click","#BT4",haroDelete);
     //$("#BT4").on("click",haroDelete);
     //haroCollection.save;
+    
+    function haroEdit(){
+      $("#myModal4").show();
+    }
+    $("#HARO").on("click","#BT5",haroEdit);
+    function haroSave(){
+      var e=confirm("你確定要編輯嗎？")
+      if(e==ture){
+        var newData = {
+          HaroId:$("#haroIdEdit").val(),
+          name:$("#nameEdit").val(),
+          Owner:$("#ownerEdit").val(),
+          Siries:$("#siriesEdit").val()
+        };
+        db.haroCollection("haro").updateById("",newData);
+      }
+    }
+    $("#HARO").on("click","#save",haroSave);
+    
     /*function pageone(){
       $(body).hide();
       $(".navbar navbar-inverse").show();

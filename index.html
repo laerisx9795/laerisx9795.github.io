@@ -240,7 +240,6 @@
   </div>
   <script type="text/javascript" src="js/bootstrap.min.js"></script>
   <script>
-    $("#myModal4").hide();
     var fdb = new ForerunnerDB();
     var db = fdb.db("ハロ");
     var haroCollection = db.collection('Haro');
@@ -252,7 +251,7 @@
       $("tbody").text("");
       $("table#HARO").show();
       for(var i=0;i<haroCollection.find().length;i++){
-        var haro = "<tr><td>"+haroCollection.find()[i].HaroId+"</td><td>"+haroCollection.find()[i].name+"</td><td>"+haroCollection.find()[i].Owner+"</td><td>"+haroCollection.find()[i].Siries+"</td><td><button type=\"button\" class=\"btn btn-default\" id=\"BT4\" value=\"Display a confirm box\">Delete</button></td><td><button type=\"button\" class=\"btn btn-default\" id=\"BT5\">Edit</button></td></tr>";
+        var haro = "<tr><td>"+haroCollection.find()[i].HaroId+"</td><td>"+haroCollection.find()[i].name+"</td><td>"+haroCollection.find()[i].Owner+"</td><td>"+haroCollection.find()[i].Siries+"</td><td><button type=\"button\" class=\"btn btn-default\" id=\"BT4\" value=\"Display a confirm box\">Delete</button></td><td><button type=\"button\" class=\"btn btn-default\" id=\"BT5\" data-target=\"#myModal4\">Edit</button></td></tr>";
         $("tbody").append(haro);
       }
     }
@@ -299,10 +298,10 @@
     //$("#BT4").on("click",haroDelete);
     //haroCollection.save;
     
-    function haroEdit(){
-      $("#myModal4").show();
-    }
-    $("#HARO").on("click","#BT5",haroEdit);
+    //function haroEdit(){
+      
+    //}
+    //$("#HARO").on("click","#BT5",haroEdit);
     function haroSave(){
       var e=confirm("你確定要編輯嗎？")
       if(e==ture){

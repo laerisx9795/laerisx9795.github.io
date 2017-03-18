@@ -295,7 +295,7 @@
       editDataId=$(this).data("id");
       //取得這筆資料的ID(也可以是其他項)
       var query = {
-        _id: editDataTd;
+        _id: editDataId;
       };
       $("input#haroIdEdit").val(haroCollection.find(query)[0].HaroId);
       $("input#nameEdit").val(haroCollection.find(query)[0].name);

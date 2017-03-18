@@ -291,9 +291,19 @@
     //$("#BT4").on("click",haroDelete);
     //haroCollection.save;
     
-    //function haroEdit(){
-    //}
-    //$("#HARO").on("click","#BT5",haroEdit);
+    function haroEdit(){
+      editDataId=$(this).data("id");
+      //取得這筆資料的ID(也可以是其他項)
+      var query = {
+        _id: editDataTd;
+      };
+      $("input#haroIdEdit").val(haroCollection.find(query)[0].HaroId);
+      $("input#nameEdit").val(haroCollection.find(query)[0].name);
+      $("input#ownerEdit").val(haroCollection.find(query)[0].Owner);
+      $("input#siriesEdit").val(haroCollection.find(query)[0].Siries);
+      console.log("2");
+    }
+    $("#HARO").on("click","#BT5",haroEdit);
     function haroSave(){
       var e=confirm("你確定要編輯嗎？")
       var num = $(this).closest("tr").text(HaroId);
@@ -308,7 +318,7 @@
       }
       console.log("1");
     }
-    $("tbody").on("click","#save",haroSave);
+    $("#HARO").on("click","#save",haroSave);
     
     /*function pageone(){
       $(body).hide();

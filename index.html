@@ -293,7 +293,7 @@
     //haroCollection.save;
     
     function haroEdit(){
-      editDataId=$(this).closest("tr").data("id");
+      editDataId=$(this).closest("tr").data(_id);
       //取得這筆資料的ID(也可以是其他項)
       var query = {
         _id: editDataId
@@ -317,6 +317,7 @@
         };
         db.haroCollection("haro").updateById(editDataId,newData);
       }
+      haroCollection.save;
       console.log("1");
     }
     $("#HARO").on("click","#save",haroSave);

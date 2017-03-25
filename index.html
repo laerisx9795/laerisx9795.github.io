@@ -280,7 +280,7 @@
         alert("month:"+months.join());
     }
     $("#BT").on("click", check);
-    if($("#inputG").val() == 0 && $("#inputL").val() == 0){
+    /*if($("#inputG").val() == 0 && $("#inputL").val() == 0){
       function haroFind(){
         var query = {
           Owner: $("#inputText").val()
@@ -296,7 +296,7 @@
       //alert("ID:"+$(result).text(HaroId)+"Name:"+$(result).text(name)+"Owner:"+$(result).text(Owner)+"Siries:"+$(result).text(Siries));
       }
       $("#BTN").on("click", haroFind);
-    }else{
+    }else{*/
       function harosFind(){
         result = haroCollection.find({
                  HaroId: {
@@ -312,7 +312,7 @@
         }
       }
       $("#BTN").on("click",harosFind);
-     }
+     //}
     
     function haroDelete(){
       var r=confirm("你確定要刪除嗎？")

@@ -280,7 +280,7 @@
         alert("month:"+months.join());
     }
     $("#BT").on("click", check);
-    /*if($("#inputG").val() == 0 && $("#inputL").val() == 0){
+    /*if($("#inputG").val()*1 == 0 && $("#inputL").val()*1 == 0){
       function haroFind(){
         var query = {
           Owner: $("#inputText").val()
@@ -307,8 +307,13 @@
       //console.log(result);
         $("#searchResult").text("");
         for(var i = 0; i<result.length;i++){
-          var data = i+"　Id:"+result[i].HaroId+"　Name:"+result[i].name+"　Owner:"+result[i].Owner+"　Siries:"+result[i].Siries+"<br>";
-          $("#searchResult").append(data);
+          if($("#inputG").val()==0){
+            $("#searchRuesult").text("Error");
+            break;
+          }else{
+            var data = i+"　Id:"+result[i].HaroId+"　Name:"+result[i].name+"　Owner:"+result[i].Owner+"　Siries:"+result[i].Siries+"<br>";
+            $("#searchResult").append(data);
+          }
         }
       }
       $("#BTN").on("click",harosFind);

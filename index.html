@@ -261,7 +261,7 @@
       $("tbody").text("");
       $("table#HARO").show();
       for(var i=0;i<haroCollection.find().length;i++){
-        var haro = "<tr><td>"+haroCollection.find()[i].HaroId+"</td><td>"+haroCollection.find()[i].name+"</td><td>"+haroCollection.find()[i].Owner+"</td><td>"+haroCollection.find()[i].Siries+"</td><td><button type='button' class='btn btn-default' id='BT4' value='Display a confirm box'>Delete</button></td><td><button type='button' data-toggle='modal' data-target='#myModal4' data-id="+haroCollection.find()[i]._id+" href='#' id='BT5' class='btn btn-default' >Edit</a></td></tr>";
+        var haro = "<tr><td>"+haroCollection.find()[i].HaroId+"</td><td>"+haroCollection.find()[i].name+"</td><td>"+haroCollection.find()[i].Owner+"</td><td>"+haroCollection.find()[i].Siries+"</td><td><button type='button' class='btn btn-default' id='BT4' value='Display a confirm box'>Delete</button></td><td><button type='button' data-toggle='modal' data-target='#myModal4' data-id="+haroCollection.find()[i].id+" href='#' id='BT5' class='btn btn-default' >Edit</a></td></tr>";
         $("tbody").append(haro);
       }
     }
@@ -343,7 +343,7 @@
     //haroCollection.save;
     
     function haroEdit(){
-      editDataId=$(this).closest("tr").data(HaroId);
+      editDataId=$(this).closest("tr").data("id");
       //取得這筆資料的ID(也可以是其他項)
       var query = {
         _id: editDataId

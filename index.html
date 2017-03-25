@@ -280,34 +280,39 @@
         alert("month:"+months.join());
     }
     $("#BT").on("click", check);
-    
-    /*function haroFind(){
-      var query = {
-        Owner: $("#inputText").val()
-      };
+    if($("#inputG").val() == 0 && $("#inputL").val() == 0){
+      function haroFind(){
+        var query = {
+          Owner: $("#inputText").val()
+        };
       //result = db.collection('Haro').find(query);
-      result = haroCollection.find(query);
-      console.log(result);
+        result = haroCollection.find(query);
+        $("#searchResult").text("");
+        for(var i = 0; i<result.length;i++){
+          var data = i+"　Id:"+result[i].HaroId+"　Name:"+result[i].name+"　Owner:"+result[i].Owner+"　Siries:"+result[i].Siries+"<br>";
+          $("#searchResult").append(data);
+        }
+      //console.log(result);
       //alert("ID:"+$(result).text(HaroId)+"Name:"+$(result).text(name)+"Owner:"+$(result).text(Owner)+"Siries:"+$(result).text(Siries));
-    }
-    $("#BTN").on("click", haroFind);*/
-    
-    function harosFind(){
-      result = haroCollection.find({
-                HaroId: {
+      }
+      $("#BTN").on("click", haroFind);
+    }else{
+      function harosFind(){
+        result = haroCollection.find({
+                 HaroId: {
                   "$gt": $("#inputG").val()*1 ,
                   "$lt": $("#inputL").val()*1
-                }
-               });
+                 }
+                });
       //console.log(result);
-      $("#searchResult").text("");
-      for(var i = 0; i<result.length;i++){
-        var data = i+"　Id:"+result[i].HaroId+"　Name:"+result[i].name+"　Owner:"+result[i].Owner+"　Siries:"+result[i].Siries+"<br>";
-        $("#searchResult").append(data);
+        $("#searchResult").text("");
+        for(var i = 0; i<result.length;i++){
+          var data = i+"　Id:"+result[i].HaroId+"　Name:"+result[i].name+"　Owner:"+result[i].Owner+"　Siries:"+result[i].Siries+"<br>";
+          $("#searchResult").append(data);
+        }
       }
-    }
-    $("#BTN").on("click",harosFind);
-    
+      $("#BTN").on("click",harosFind);
+     }
     
     function haroDelete(){
       var r=confirm("你確定要刪除嗎？")

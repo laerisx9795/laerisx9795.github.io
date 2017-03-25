@@ -365,7 +365,7 @@
           Owner:$("input#ownerEdit").val(),
           Siries:$("input#siriesEdit").val()
         };
-        db.collection("haro").updateById(editDataId,newData);
+        db.collection('haro').updateById(editDataId,newData);
       }
       haroCollection.save;
       console.log("haroSave");

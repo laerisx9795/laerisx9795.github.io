@@ -305,6 +305,7 @@
         var data = "Id:"+result[i].HaroId+"Name:"+result[i].name+"Owner:"+result[i].Owner+"Siries:"+result[i].Siries;
         $(resultData).append(data);
       }
+      console.log(resultData);
       $("#searchResult").text(resultData);
     }
     $("#BTN").on("click",harosFind);

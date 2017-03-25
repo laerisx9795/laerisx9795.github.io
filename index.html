@@ -191,7 +191,23 @@
                  </div>
                 </div>
               </div>
-            <input type="text" id="IPT"/><button type="button" id="BTN" class="btn btn-info">搜尋</button><button type="button" id="BTN2" class="btn btn-info">LOAD</button>
+            <div class="modal fade" id="myModal5" tabindex="-1" role="dialog" aria-labelledby="myModalLabel5">
+              <div class="modal-dialog" role="document">
+                <div class="modal-content">
+                  <div class="modal-header">
+                    <!-- class="close" -->
+                    <button type="button" class="btn btn-info" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                    <h4 class="modal-title" id="myModalLabel5"><a href="#">Create</a><!--Modal title--></h4>
+                  </div>
+                  <div class="modal-body">
+                    <h4>Result</h4>
+                  </div>
+                  <div class="modal-footer">
+                    <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+                  </div>
+                 </div>
+                </div>
+            <input type="number" id="IPT"/><button type="button" data-toggle='modal' data-target='#myModal5' href='#'id="BTN" class="btn btn-info">搜尋</button><button type="button" id="BTN2" class="btn btn-info">LOAD</button>
             <table id="HARO" class="table table-striped">
               <thead>
                 <tr>
@@ -265,7 +281,7 @@
     }
     $("#BT").on("click", check);
     
-    function haroFind(){
+    /*function haroFind(){
       var query = {
         Owner: $("#IPT").val()
       };
@@ -274,8 +290,18 @@
       console.log(result);
       //alert("ID:"+$(result).text(HaroId)+"Name:"+$(result).text(name)+"Owner:"+$(result).text(Owner)+"Siries:"+$(result).text(Siries));
     }
-    $("#BTN").on("click", haroFind);
+    $("#BTN").on("click", haroFind);*/
     
+    function harosFind(){
+      result = haroCollection.find({
+                HaroId: {
+                  "$gt": $("#IPT").val()*1
+                  //"$lt": 5
+                }
+               });
+      console.log(result);
+    }
+    $("#BTN").on("click",harosFind);
     
     
     function haroDelete(){

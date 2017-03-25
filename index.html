@@ -307,7 +307,8 @@
       //console.log(result);
         $("#searchResult").text("");
         for(var i = 0; i<result.length;i++){
-          if($("#inputL").val()*1 == 0){
+          if($("#inputL").val()*1 <$("#inputG").val()*1){
+            console.log("Error");
             $("#searchRuesult").text("Error");
             break;
           }else{

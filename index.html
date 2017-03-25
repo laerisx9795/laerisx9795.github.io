@@ -199,6 +199,7 @@
                   </div>
                   <div class="modal-body">
                     <h4>Result</h4>
+                    <p id="searchResult"></p>
                   </div>
                   <div class="modal-footer">
                     <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
@@ -280,7 +281,7 @@
     }
     $("#BT").on("click", check);
     
-    function haroFind(){
+    /*function haroFind(){
       var query = {
         Owner: $("#inputText").val()
       };
@@ -289,7 +290,7 @@
       console.log(result);
       //alert("ID:"+$(result).text(HaroId)+"Name:"+$(result).text(name)+"Owner:"+$(result).text(Owner)+"Siries:"+$(result).text(Siries));
     }
-    $("#BTN").on("click", haroFind);
+    $("#BTN").on("click", haroFind);*/
     
     function harosFind(){
       result = haroCollection.find({
@@ -298,7 +299,8 @@
                   "$lt": $("#inputL").val()*1
                 }
                });
-      console.log(result);
+      //console.log(result);
+      $("#searchResult").text() = result;
     }
     $("#BTN").on("click",harosFind);
     

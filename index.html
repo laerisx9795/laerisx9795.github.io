@@ -367,7 +367,7 @@
         };
         db.collection('haro').updateById(editDataId,newData);
       }
-      haroCollection.save;
+      haroCollection.save();
       console.log("haroSave");
     }
     $("body").on("click","#save",haroSave);

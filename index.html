@@ -205,6 +205,7 @@
                   </div>
                  </div>
                 </div>
+              </div>
             <input type="number" id="IPT"/><button type="button" data-toggle='modal' data-target='#myModal5' href='#' id="BTN" class="btn btn-info">搜尋</button><button type="button" id="BTN2" class="btn btn-info">LOAD</button>
             <table id="HARO" class="table table-striped">
               <thead>
@@ -293,7 +294,7 @@
     function harosFind(){
       result = haroCollection.find({
                 HaroId: {
-                  $gt: $("#IPT").val()*1
+                  "$gt": $("#IPT").val()*1
                   //"$lt": 5
                 }
                });

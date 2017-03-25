@@ -298,22 +298,30 @@
       $("#BTN").on("click", haroFind);
     }else{*/
       function harosFind(){
-        result = haroCollection.find({
-                 HaroId: {
-                  "$gt": $("#inputG").val()*1 ,
-                  "$lt": $("#inputL").val()*1
-                 }
-                });
+        if($("#inputL").val()*1 != 0){
+          result = haroCollection.find({
+                    HaroId: {
+                      "$gt": $("#inputG").val()*1 ,
+                      "$lt": $("#inputL").val()*1
+                    }
+                  });
       //console.log(result);
-        $("#searchResult").text("");
-        for(var i = 0; i<result.length;i++){
-          if($("#inputL").val()*1 <$("#inputG").val()*1){
-            console.log("Error");
-            $("#searchRuesult").text("Error");
-            break;
-          }else{
-            var data = i+"　Id:"+result[i].HaroId+"　Name:"+result[i].name+"　Owner:"+result[i].Owner+"　Siries:"+result[i].Siries+"<br>";
-            $("#searchResult").append(data);
+          $("#searchResult").text("");
+          for(var i = 0; i<result.length;i++){
+              var data = i+"　Id:"+result[i].HaroId+"　Name:"+result[i].name+"　Owner:"+result[i].Owner+"　Siries:"+result[i].Siries+"<br>";
+              $("#searchResult").append(data);
+          }
+        }else{
+          result = haroCollection.find({
+                    HaroId: {
+                      "$gt": $("#inputG").val()*1
+                    }
+                  });
+      //console.log(result);
+          $("#searchResult").text("");
+          for(var i = 0; i<result.length;i++){
+              var data = i+"　Id:"+result[i].HaroId+"　Name:"+result[i].name+"　Owner:"+result[i].Owner+"　Siries:"+result[i].Siries+"<br>";
+              $("#searchResult").append(data);
           }
         }
       }

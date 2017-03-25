@@ -206,7 +206,7 @@
                  </div>
                 </div>
               </div>
-            <input type="number" id="IPT"/><button type="button" data-toggle='modal' data-target='#myModal5' href='#' id="BTN" class="btn btn-info">搜尋</button><button type="button" id="BTN2" class="btn btn-info">LOAD</button>
+            <input type="text" id="inputText"/><input type="number" id="inputG"/><input type="number" id="inputL"/><button type="button" data-toggle='modal' data-target='#myModal5' href='#' id="BTN" class="btn btn-info">搜尋</button><button type="button" id="BTN2" class="btn btn-info">LOAD</button>
             <table id="HARO" class="table table-striped">
               <thead>
                 <tr>
@@ -280,22 +280,22 @@
     }
     $("#BT").on("click", check);
     
-    /*function haroFind(){
+    function haroFind(){
       var query = {
-        Owner: $("#IPT").val()
+        Owner: $("#inputText").val()
       };
       //result = db.collection('Haro').find(query);
       result = haroCollection.find(query);
       console.log(result);
       //alert("ID:"+$(result).text(HaroId)+"Name:"+$(result).text(name)+"Owner:"+$(result).text(Owner)+"Siries:"+$(result).text(Siries));
     }
-    $("#BTN").on("click", haroFind);*/
+    $("#BTN").on("click", haroFind);
     
     function harosFind(){
       result = haroCollection.find({
                 HaroId: {
-                  "$gt": $("#IPT").val()*1
-                  //"$lt": 5
+                  "$gt": $("#inputG").val()*1 ,
+                  "$lt": $("#inputL").val()*1
                 }
                });
       console.log(result);

@@ -352,7 +352,7 @@
       $("input#nameEdit").val(haroCollection.find(query)[0].name);
       $("input#ownerEdit").val(haroCollection.find(query)[0].Owner);
       $("input#siriesEdit").val(haroCollection.find(query)[0].Siries);
-      console.log("2");
+      console.log("haroEdit");
     }
     $("#HARO").on("click","#BT5",haroEdit);
     function haroSave(){
@@ -368,9 +368,9 @@
         db.haroCollection("haro").updateById(editDataId,newData);
       }
       haroCollection.save;
-      console.log("1");
+      console.log("haroSave");
     }
-    $("#HARO").on("click","#save",haroSave);
+    $("body").on("click","#save",haroSave);
     
     /*function pageone(){
       $(body).hide();

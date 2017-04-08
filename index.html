@@ -378,10 +378,10 @@
       //haroCollection.closet().remove();
         //id=$(this).data();
         $(this).closest("tr").remove();
+        haroCollection.save();
         //$(this).data()
       }
       //console.log("X");
-      haroCollection.save();
     }
     $("#HARO").on("click","#BT4",haroDelete);
     //$("#BT4").on("click",haroDelete);

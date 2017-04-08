@@ -259,13 +259,14 @@
     haroCollection.load();
     $("table#HARO").hide();
     var editDataId;
+    var deleteDataId;
     
     function haroShow(){
       //console.log("ハロ");
       $("tbody").text("");
       $("table#HARO").show();
       for(var i=0;i<haroCollection.find().length;i++){
-        var haro = "<tr><td>"+haroCollection.find()[i].HaroId+"</td><td>"+haroCollection.find()[i].name+"</td><td>"+haroCollection.find()[i].Owner+"</td><td>"+haroCollection.find()[i].Siries+"</td><td><button type='button' class='btn btn-default' id='BT4' value='Display a confirm box'>Delete</button></td><td><button type='button' data-toggle='modal' data-target='#myModal4' data-id="+haroCollection.find()[i]._id+" href='#' id='BT5' class='btn btn-default' >Edit</a></td></tr>";
+        var haro = "<tr><td>"+haroCollection.find()[i].HaroId+"</td><td>"+haroCollection.find()[i].name+"</td><td>"+haroCollection.find()[i].Owner+"</td><td>"+haroCollection.find()[i].Siries+"</td><td><button type='button' class='btn btn-default' id='BT4' value='Display a confirm box' data-id="+haroCollection.find()[i]._id+">Delete</button></td><td><button type='button' data-toggle='modal' data-target='#myModal4' data-id="+haroCollection.find()[i]._id+" href='#' id='BT5' class='btn btn-default' >Edit</a></td></tr>";
         $("tbody").append(haro);
       }
     }
@@ -374,11 +375,15 @@
     $("#Sagasu").on("click",haroCheck)
     
     function haroDelete(){
+      deleteDataId=$(this).data("id");
       var r=confirm("你確定要刪除嗎？")
       if (r==true){
       //haroCollection.closet().remove();
         //id=$(this).data();
-        $(this).closest("tr").remove();
+        //$(this).closest("tr").remove();
+        haroCollection.remove({
+          _id: deleteDataId
+        });
         haroCollection.save();
         //$(this).data()
       }

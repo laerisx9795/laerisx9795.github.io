@@ -301,8 +301,8 @@
         alert("month:"+months.join());
     }
     $("#BT").on("click", check);*/
-    //if($("#inputG").val()*1 == 0 && $("#inputL").val()*1 == 0){
-      /*function haroFind(){
+    if($("#inputG").val()*1 == 0 && $("#inputL").val()*1 == 0){
+      function haroFind(){
         var query = {
           Owner: $("#inputText").val()
         };
@@ -317,7 +317,7 @@
       //alert("ID:"+$(result).text(HaroId)+"Name:"+$(result).text(name)+"Owner:"+$(result).text(Owner)+"Siries:"+$(result).text(Siries));
       }
       $("#BTN").on("click", haroFind);
-    }else{*/
+    }else{
       function harosFind(){
         if($("#inputL").val()*1 != 0){
           result = haroCollection.find({

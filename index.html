@@ -281,6 +281,10 @@
       haroCollection.insert(newData);
       haroCollection.save();
       console.log("haroCreated");
+      $("input#haroIdIn").val("");
+      $("input#nameIn").val("");
+      $("input#ownerIn").val("");
+      $("input#siriesIn").val("");
     }
       $("#create").on("click",haroCreate);
 
@@ -341,6 +345,8 @@
               $("#searchResult").append(data);
           }
         }
+        $("#inputG").val("");
+        $("#inputL").val("");
       }
       $("#BTN").on("click",harosFind);
      //}

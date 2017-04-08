@@ -127,12 +127,12 @@
           </div>
           <div class="col-xs-12 col-md-2">
             <a href="http://www1.cpshs.hcc.edu.tw/information/" class="btn btn-primary">竹北資訊科</a><br>
-            <!--<input type="button" onclick="disp_confirm()" value="Display a confirm box" /><br>-->
+            <!--<input type="button" onclick="disp_confirm()" value="Display a confirm box" /><br>
             <input type="checkbox" id="month" value='3月'/><h3>3月</h3><br>
             <input type="checkbox" id="month" value='6月'/><h3>6月</h3><br>
             <input type="checkbox" id="month" value='9月'/><h3>9月</h3><br>
             <input type="checkbox" id="month" value='12月'/><h3>12月</h3><br>
-            <button type="button" id="BT" class="btn btn-info">はい</button>
+            <button type="button" id="BT" class="btn btn-info">はい</button>-->
           </div>
           <div class="col-xs-12 col-md-5">
             <!--<h4 class="1224">Finish.</h4>-->
@@ -271,7 +271,7 @@
     }
     $("#BTN2").on("click", haroShow);
 
-    function check(){
+    /*function check(){
       var talk=true;
       var monthOpt = $("input#month");
       var months =[];
@@ -283,7 +283,7 @@
       if(talk)
         alert("month:"+months.join());
     }
-    $("#BT").on("click", check);
+    $("#BT").on("click", check);*/
     //if($("#inputG").val()*1 == 0 && $("#inputL").val()*1 == 0){
       /*function haroFind(){
         var query = {
@@ -391,8 +391,8 @@
           Siries:$("input#siriesEdit").val()
         };
         db.collection('haro').updateById(editDataId,newData);
+        haroCollection.save();
       }
-      haroCollection.save();
       console.log("haroSave");
     }
     $("body").on("click","#save",haroSave);

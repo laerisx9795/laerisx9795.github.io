@@ -270,6 +270,19 @@
       }
     }
     $("#BTN2").on("click", haroShow);
+    
+    function haroCreate(){
+      var newData = {
+        HaroId:$("input#haroIdIn").val(),
+        name:$("input#nameIn").val(),
+        Owner:$("input#ownerIn").val(),
+        Siries:$("input#siriesIn").val()
+      };
+      haroCollection.insert(newData);
+      haroCollection.save();
+      console.log("haroCreated");
+    }
+      $("#create").on("click",haroCreate);
 
     /*function check(){
       var talk=true;

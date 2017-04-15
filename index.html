@@ -294,12 +294,15 @@
     $("#BTN2").on("click", haroShow);
     
     function haroCreate(){
+      var gundam={
+       _id:$("select#gundam-id :selected").val()
+      };
       var newData = {
         HaroId:$("input#haroIdIn").val(),
         name:$("input#nameIn").val(),
         Owner:$("input#ownerIn").val(),
         Siries:$("input#siriesIn").val(),
-        Gundam:gundamCollection.find()[$("select#gundam-id :selected").val()].Gundam
+        Gundam:gundamCollection.find(gundam)[0].Gundam
       };
       haroCollection.insert(newData);
       haroCollection.save();

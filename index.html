@@ -299,7 +299,7 @@
         name:$("input#nameIn").val(),
         Owner:$("input#ownerIn").val(),
         Siries:$("input#siriesIn").val(),
-        Gundam:$("select#gundam-id :selected").val()
+        Gundam:gundamCollection.find()[$("select#gundam-id :selected").val()].Gundam
       };
       haroCollection.insert(newData);
       haroCollection.save();

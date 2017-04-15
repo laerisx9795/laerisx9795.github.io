@@ -157,7 +157,7 @@
                     <h4>Siries</h4>
                     <input type="text" id="siriesIn"/>
                     <h4>Gundam</h4>
-                    <select id="gundam-id">
+                    <select id="gundamId">
                       <option value="">Select Gundam</option>
                     </select>
                   </div>
@@ -221,9 +221,6 @@
             <h4>GUNDAMSEED</h4><input type="checkbox" id="GD" value="GUNDAMSEED" />
             <button type="button" id="Sagasu" data-toggle='modal' data-target='#myModal5' href='#' class="btn btn-info">Search</button>
             <br><input type="text" id="inputGundam"/><button id="createGundam" class="btn btn-info">Create</button><br>
-            <select id="gundam-id">
-                      <option value="">Select Gundam</option>
-                    </select>
             <table id="HARO" class="table table-striped">
               <thead>
                 <tr>
@@ -295,7 +292,7 @@
     
     function haroCreate(){
       var gundam={
-       _id:$("select#gundam-id :selected").val()
+       _id:$("select#gundamId :selected").val()
       };
       var newData = {
         HaroId:$("input#haroIdIn").val(),
@@ -311,7 +308,7 @@
       $("input#nameIn").val("");
       $("input#ownerIn").val("");
       $("input#siriesIn").val("");
-      $("select#gundam-id").val("");
+      $("select#gundamId").val("");
     }
       $("#create").on("click",haroCreate);
       $("#create").on("click",haroShow);

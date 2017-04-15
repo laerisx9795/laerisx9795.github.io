@@ -453,6 +453,9 @@
     }
     $("#HARO").on("click","#BT5",haroEdit);
     function haroSave(){
+      var Gundam={
+       _id:$("select#gundam-id :selected").val()
+      };
       var e=confirm("你確定要編輯嗎？")
       //var num = $(this).closest("tr").text(HaroId);
       if(e){
@@ -461,7 +464,7 @@
           name:$("input#nameEdit").val(),
           Owner:$("input#ownerEdit").val(),
           Siries:$("input#siriesEdit").val(),
-          Gundam:gundamCollection.find()[$("select#gundam-id :selected").val()].Gundam
+          Gundam:gundamCollection.find(Gundam)[0].Gundam
         };
         haroCollection.updateById(editDataId,newData);
         haroCollection.save();

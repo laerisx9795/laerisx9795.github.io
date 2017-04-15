@@ -461,7 +461,7 @@
           name:$("input#nameEdit").val(),
           Owner:$("input#ownerEdit").val(),
           Siries:$("input#siriesEdit").val(),
-          Gundam:$("select#gundam-id :selected").val()
+          Gundam:gundamCollection.find()[$("select#gundam-id :selected").val()].Gundam
         };
         haroCollection.updateById(editDataId,newData);
         haroCollection.save();

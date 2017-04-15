@@ -285,6 +285,7 @@
         var gundam={
           _id:$("select#gundam-id :selected").val()
         };
+        console.log(gundam._id);
         if(gundam == ""){
           gundamName = "unkown";
         }else{
@@ -459,6 +460,7 @@
       var gundam={
        _id:$("select#gundam-id :selected").val()
       };
+      console.log(gundam._id);
       var e=confirm("你確定要編輯嗎？")
       //var num = $(this).closest("tr").text(HaroId);
       if(e){

@@ -285,7 +285,7 @@
         if(haroCollection.find()[i].Gundam == ""){
           gundamName = "unkown";
         }else{
-          gundamName = gundamCollection.find()[i].Gundam;
+          gundamName = haroCollection.find()[i].Gundam;
         }
         var haro = "<tr><td>"+haroCollection.find()[i].HaroId+"</td><td>"+haroCollection.find()[i].name+"</td><td>"+haroCollection.find()[i].Owner+"</td><td>"+haroCollection.find()[i].Siries+"</td><td>"+gundamName+"</td><td><button type='button' class='btn btn-default' id='BT4' value='Display a confirm box' data-id="+haroCollection.find()[i]._id+">Delete</button></td><td><button type='button' data-toggle='modal' data-target='#myModal4' data-id="+haroCollection.find()[i]._id+" href='#' id='BT5' class='btn btn-default' >Edit</a></td></tr>";
         $("tbody").append(haro);

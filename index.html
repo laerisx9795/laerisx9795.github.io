@@ -430,7 +430,7 @@
         haroCollection.save();
         //$(this).data()
       }
-      console.log("X");
+      //console.log("X");
     }
     $("body").on("click","#BT4",haroDelete);
     $("body").on("click","#BT4",haroShow);
@@ -449,14 +449,14 @@
       $("input#siriesEdit").val(haroCollection.find(query)[0].Siries);
       $("select#gundam-id").val(haroCollection.find(query)[0].Gundam);
       
-      console.log("haroEdit");
+      //console.log("haroEdit");
     }
     $("#HARO").on("click","#BT5",haroEdit);
     function haroSave(){
       var gundam={
        _id:$("select#gundam-id :selected").val()
       };
-      console.log(gundam._id);
+      //console.log(gundam._id);
       var e=confirm("你確定要編輯嗎？")
       //var num = $(this).closest("tr").text(HaroId);
       if(e){
@@ -470,7 +470,7 @@
         haroCollection.updateById(editDataId,newData);
         haroCollection.save();
       }
-      console.log("haroSave");
+      //console.log("haroSave");
     }
     $("body").on("click","#save",haroSave);
     $("body").on("click","#save",haroShow);

@@ -156,6 +156,10 @@
                     <input type="text" id="ownerIn"/>
                     <h4>Siries</h4>
                     <input type="text" id="siriesIn"/>
+                    <h4>Gundam</h4>
+                    <select id="gundam-id">
+                      <option value="">Select Gundam</option>
+                    </select>
                   </div>
                   <div class="modal-footer">
                     <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
@@ -181,6 +185,10 @@
                     <input type="text" id="ownerEdit"/>
                     <h4>Siries</h4>
                     <input type="text" id="siriesEdit"/>
+                    <h4>Gundam</h4>
+                    <select id="gundam-id">
+                      <option value="">Select Gundam</option>
+                    </select>
                   </div>
                   <div class="modal-footer">
                     <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
@@ -212,6 +220,7 @@
             <h4>GUNDAMOO</h4><input type="checkbox" id="GD" value="GUNDAM00" />
             <h4>GUNDAMSEED</h4><input type="checkbox" id="GD" value="GUNDAMSEED" />
             <button type="button" id="Sagasu" data-toggle='modal' data-target='#myModal5' href='#' class="btn btn-info">Search</button>
+            <input type="text" id="inputGundam"/><button id="createGundam">Create</button>
             <table id="HARO" class="table table-striped">
               <thead>
                 <tr>
@@ -219,6 +228,7 @@
                   <td>Name</td>
                   <td>Owner</td>
                   <td>Siries</td>
+                  <td>Gundam</td>
                   <td>Settings</td>
                 </tr>
               </thead>
@@ -256,7 +266,9 @@
     var fdb = new ForerunnerDB();
     var db = fdb.db("ハロ");
     var haroCollection = db.collection('Haro');
+    var gundamCollection = db.collection('Gundam');
     haroCollection.load();
+    gundamCollection.load();
     $("table#HARO").hide();
     var editDataId;
     var deleteDataId;
@@ -266,7 +278,7 @@
       $("tbody").text("");
       $("table#HARO").show();
       for(var i=0;i<haroCollection.find().length;i++){
-        var haro = "<tr><td>"+haroCollection.find()[i].HaroId+"</td><td>"+haroCollection.find()[i].name+"</td><td>"+haroCollection.find()[i].Owner+"</td><td>"+haroCollection.find()[i].Siries+"</td><td><button type='button' class='btn btn-default' id='BT4' value='Display a confirm box' data-id="+haroCollection.find()[i]._id+">Delete</button></td><td><button type='button' data-toggle='modal' data-target='#myModal4' data-id="+haroCollection.find()[i]._id+" href='#' id='BT5' class='btn btn-default' >Edit</a></td></tr>";
+        var haro = "<tr><td>"+haroCollection.find()[i].HaroId+"</td><td>"+haroCollection.find()[i].name+"</td><td>"+haroCollection.find()[i].Owner+"</td><td>"+haroCollection.find()[i].Siries+"</td><td>"+gundamCollection.find()[i].Gundam+"</td><td><button type='button' class='btn btn-default' id='BT4' value='Display a confirm box' data-id="+haroCollection.find()[i]._id+">Delete</button></td><td><button type='button' data-toggle='modal' data-target='#myModal4' data-id="+haroCollection.find()[i]._id+" href='#' id='BT5' class='btn btn-default' >Edit</a></td></tr>";
         $("tbody").append(haro);
       }
     }
@@ -277,7 +289,8 @@
         HaroId:$("input#haroIdIn").val(),
         name:$("input#nameIn").val(),
         Owner:$("input#ownerIn").val(),
-        Siries:$("input#siriesIn").val()
+        Siries:$("input#siriesIn").val(),
+        Gundam:$("select#gundam-id :selected").val()
       };
       haroCollection.insert(newData);
       haroCollection.save();
@@ -286,9 +299,29 @@
       $("input#nameIn").val("");
       $("input#ownerIn").val("");
       $("input#siriesIn").val("");
+      $("select#gundam-id").val("");
     }
       $("#create").on("click",haroCreate);
       $("#create").on("click",haroShow);
+    
+    function gundamCreate(){
+      var newData = {
+        Gundam:$("input#inputGundam").val();
+      }
+      gundamCollection.insert(newData);
+      gundamCollection.save();
+      console.log("gundamCreated");
+      $("input#inputGundam").val("");
+    }
+      $("#createGundam").on("click",gundamCreate);
+    function gundamShow(){
+      //console.log("ハロ");
+      for(var i=0;i<gundamCollection.find().length;i++){
+        var gundam = "<option value="+gundamCollection.find()[i]._id+" selected>"+gundamCollection.find()[i].Gundam+"</option>";
+        $("select#gundam-id").append(gundam);
+      }
+    }
+      $("#createGundam").on("click",gundamShow);
 
     /*function check(){
       var talk=true;
@@ -369,7 +402,7 @@
       });
       $("#searchResult").text("");
           for(var i = 0; i<result.length;i++){
-              var data = i+"　Id:"+result[i].HaroId+"　Name:"+result[i].name+"　Owner:"+result[i].Owner+"　Siries:"+result[i].Siries+"<br>";
+              var data = i+"　Id:"+result[i].HaroId+"　Name:"+result[i].name+"　Owner:"+result[i].Owner+"　Siries:"+result[i].Siries+"　Gundam:"+result[i].Gundam+"<br>";
               $("#searchResult").append(data);
       }
     }
@@ -405,6 +438,8 @@
       $("input#nameEdit").val(haroCollection.find(query)[0].name);
       $("input#ownerEdit").val(haroCollection.find(query)[0].Owner);
       $("input#siriesEdit").val(haroCollection.find(query)[0].Siries);
+      $("select#gundam-id").val(haroCollection.find(query)[0].Gundam);
+      
       console.log("haroEdit");
     }
     $("#HARO").on("click","#BT5",haroEdit);
@@ -416,7 +451,8 @@
           HaroId:$("input#haroIdEdit").val(),
           name:$("input#nameEdit").val(),
           Owner:$("input#ownerEdit").val(),
-          Siries:$("input#siriesEdit").val()
+          Siries:$("input#siriesEdit").val(),
+          Gundam:$("select#gundam-id :selected").val()
         };
         haroCollection.updateById(editDataId,newData);
         haroCollection.save();

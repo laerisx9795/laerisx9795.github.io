@@ -282,13 +282,13 @@
       $("table#HARO").show();
       var gundamName;
       for(var i=0;i<haroCollection.find().length;i++){
-        var Gundam={
+        var gundam={
           _id:$("select#gundam-id :selected").val()
         };
-        if(Gundam == ""){
+        if(gundam == ""){
           gundamName = "unkown";
         }else{
-          gundamName = gundamCollection.find(Gundam)[0].Gundam;
+          gundamName = gundamCollection.find(gundam)[0].Gundam;
         }
         var haro = "<tr><td>"+haroCollection.find()[i].HaroId+"</td><td>"+haroCollection.find()[i].name+"</td><td>"+haroCollection.find()[i].Owner+"</td><td>"+haroCollection.find()[i].Siries+"</td><td>"+gundamName+"</td><td><button type='button' class='btn btn-default' id='BT4' value='Display a confirm box' data-id="+haroCollection.find()[i]._id+">Delete</button></td><td><button type='button' data-toggle='modal' data-target='#myModal4' data-id="+haroCollection.find()[i]._id+" href='#' id='BT5' class='btn btn-default' >Edit</a></td></tr>";
         $("tbody").append(haro);
@@ -456,7 +456,7 @@
     }
     $("#HARO").on("click","#BT5",haroEdit);
     function haroSave(){
-      var Gundam={
+      var gundam={
        _id:$("select#gundam-id :selected").val()
       };
       var e=confirm("你確定要編輯嗎？")
@@ -467,7 +467,7 @@
           name:$("input#nameEdit").val(),
           Owner:$("input#ownerEdit").val(),
           Siries:$("input#siriesEdit").val(),
-          Gundam:gundamCollection.find(Gundam)[0].Gundam
+          Gundam:gundamCollection.find(gundam)[0].Gundam
         };
         haroCollection.updateById(editDataId,newData);
         haroCollection.save();

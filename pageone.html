@@ -1,9 +1,119 @@
 <!DOCTYPE html>
 <html>
 <head>
+   <link href="css/bootstrap.css" rel="stylesheet">
+  <link rel="stylesheet" type="text/css" href="css/style.css" />
+  <script type="text/javascript" src="js/jquery-3.1.1.min.js"></script>
+  <script src="js/main.js"></script>
+  <script src="js/fdb-all.min.js"></script>
+  <link href="https://fonts.googleapis.com/css?family=Dancing+Script" rel="stylesheet">
+  
+  <link rel="shortcut icon" href="https://raw.githubusercontent.com/laerisx9795/laerisx9795.github.io/master/images/favicon.ico" type="image/x-icon" />
+  
   <title>page1</title>
+  <style>
+  </style>
+  <!--<script src="html/todo.html"></script>
+  <script src="css/todo.css"></script>
+  <script src="js/todo.js"></script>-->
 </head>
 <body>
+  <nav class="navbar navbar-inverse">
+    <ul class="nav navbar-nav navbar-right">
+      <li class="dropdown">
+        <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Dropdown <span class="caret"></span></a>
+        <ul class="dropdown-menu">
+          <li><a href="#" data-toggle="tab">不要點<!--Action--></a></li>
+          <li><a href="#" data-toggle="tab">因為<!--Another action--></a></li>
+          <li><a href="#" data-toggle="tab">點了也沒用<!--Something else here--></a></li>
+          <li role="separator" class="divider"></li>
+          <li><a href="#" data-toggle="tab">裡面又沒東西<!--Separated link--></a></li>
+        </ul>
+      </li>
+      <li><a href="http://www1.cpshs.hcc.edu.tw/information/">竹北資科</a></li>
+    </ul>
+  <div class="container-fluid">
+    <div class="navbar-header">
+      <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#myNavbar">
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </button>
+      <a class="navbar-brand" href="#">B9</a>
+    </div>
+    <div class="collapse navbar-collapse navbar-collapse-center" id="myNavbar">
+      <ul class="nav navbar-nav">
+        <li class="active"><a href="#" id="HOME" onclick="home()" data-toggle="tab">Home</a></li>
+        <li><a href="http://laerisx9795.github.io/pageone.html">Page 1</a></li>
+        <li><a href="#" id="pageTwo" data-toggle="tab">Page 2</a></li>
+      </ul>
+      <ul class="nav navbar-nav navbar-right">
+        <li>
+        <!-- Button trigger modal -->
+          <a data-toggle="modal" data-target="#myModal" href="#">
+            <!--Launch demo modal-->
+            Sign Up
+          </a>
+
+          <!-- Modal -->
+          <div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+            <div class="modal-dialog" role="document">
+              <div class="modal-content">
+                <div class="modal-header">
+                  <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                  <h4 class="modal-title" id="myModalLabel"><a href="#">Sign Up</a><!--Modal title--></h4>
+                </div>
+                <div class="modal-body">
+                  <h4>User Name</h4>
+                  <input type="text" id="userNameIn"/>
+                  <h4>Password</h4>
+                  <input type="text" id=passwordIn/>
+                  <h4>Cellphone</h4>
+                  <input type="text" id="cellphone"/>
+                  <h4>E-mail</h4>
+                  <input type="email" id="email"/>
+                </div>
+                <div class="modal-footer">
+                  <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+                  <button type="button" class="btn btn-primary" id="signUp">Sign up</button>
+                </div>
+              </div>
+              </div>
+            </div>
+        </li>
+        <li>
+          <!-- Button trigger modal -->
+          <a data-toggle="modal" data-target="#myModal2" href="#">
+            <!--Launch demo modal-->
+            Login
+          </a>
+
+          <!-- Modal -->
+          <div class="modal fade" id="myModal2" tabindex="-1" role="dialog" aria-labelledby="myModalLabel2">
+            <div class="modal-dialog" role="document">
+              <div class="modal-content">
+                <div class="modal-header">
+                  <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                  <h4 class="modal-title" id="myModalLabel2"><a href="#">Login</a><!--Modal title--></h4>
+                </div>
+                <div class="modal-body">
+                  <h4>User Name</h4>
+                  <input type="text" id="userName"/>
+                  <h4>Password</h4>
+                  <input type="text" id="password"/>
+                </div>
+                <div class="modal-footer">
+                  <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+                  <button type="button" class="btn btn-primary" id="login">Login</button>
+                </div>
+              </div>
+             </div>
+           </div>
+        </li>
+       </ul>
+     </div>
+   </div>
+</nav>
   <h4 class="two">Akatsuki</h4>
 </body>
 </html>

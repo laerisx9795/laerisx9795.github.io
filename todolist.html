@@ -185,7 +185,7 @@
         "</span>"+"   "+
         dateString+
         //d[0]+"/"+d[1]+"/"+d[2]+" "+d[3]+":"+d[3]+
-        "</label><div class=\"btn-group\"><button class=\"editThis\">編輯</button>"+" "+"<button class=\"js-delete-button\">刪除</button></div></li>");
+        "</label><div class=\"btn-group\"><button id=\"editThis\" class=\"btn btn-info\">編輯</button>"+" "+"<button id=\"js-delete-button\" class=\"btn btn-info\">刪除</button></div></li>");
       //var all_Inputs = $("input[type=textbox]");
       $("#IPT").val("");
       spanid+=1;
@@ -225,7 +225,7 @@
 
 
     //$(".js-delete-button").on("click",deleteTask);
-    $("#SP").on("click","#js-delete-button",deleteTask);
+    $("body").on("click","#js-delete-button",deleteTask);
 
     //.remove() 刪除
 

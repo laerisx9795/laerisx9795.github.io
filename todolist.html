@@ -209,7 +209,7 @@
 
     //刪除
     function deleteTask(){
-      deleteDataId=$(this).data("spanid");
+      /*deleteDataId=$(this).data("spanid");
       var r=confirm("你確定要刪除嗎？")
       if (r==true){
       //haroCollection.closet().remove();
@@ -219,7 +219,8 @@
           spanid: deleteDataId
         });
         //$(this).data()
-      }
+      }*/
+      $(this).closest("li").remove();
       updateNum();
     }
 

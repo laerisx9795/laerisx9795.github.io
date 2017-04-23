@@ -123,7 +123,7 @@
               <h1>TODO List</h1>
                 <div id="DIV2">
                   <input id="IPT" type="text" />
-                  <button id="BT" >加入</button>
+                  <button id="BT" class="btn btn-info">加入</button>
                 </div>
                 <!--<div class="clear-float"></div>-->
                 <div id="DIV4">
@@ -134,18 +134,18 @@
                         <span class="task-content">TEST</span>
                       </label>
                       <div class="btn-group">
-                        <button class="editThis">編輯</button>
-                        <button class="js-delete-button">刪除</button>
+                        <button id="editThis" class="btn btn-info">編輯</button>
+                        <button id="js-delete-button" class="btn btn-info">刪除</button>
                       </div>
                     </li>
                   </ul>
                   <div id="DIV3">
-                    還有<span id="NUM">0</span>個未完成事項
-                    <button id="Del">刪除已完成事項</button>
+                    還有<span id="NUM" class="btn btn-info">0</span>個未完成事項
+                    <button id="Del" class="btn btn-info">刪除已完成事項</button>
                     <hr>
-                    <button id="already">顯示已完成事項</button>
-                    <button id="yet">顯示未完成事項</button>
-                    <button id="all">顯示所有事項</button>
+                    <button id="already" class="btn btn-info">顯示已完成事項</button>
+                    <button id="yet" class="btn btn-info">顯示未完成事項</button>
+                    <button id="all" class="btn btn-info">顯示所有事項</button>
                   </div>
                 </div>
             </div>
@@ -159,6 +159,8 @@
   </div>
   <script type="text/javascript" src="js/bootstrap.min.js"></script>
   <script>
+    var deleteDataId;
+    var spanid=0;
     updateNum();
     //加入
     function toDoLi(){
@@ -177,8 +179,8 @@
       //  (date.getMonth()+1),
       //  +date.getDate(),
       //  date.getHours(),date.getMinutes());
-      $("#SP").append(
-        "<li class=\"LIST\"><label><input class=\"TCK\" type=\"checkbox\"><span class=\"task-content\">" +
+      $("#SP").append( 
+        "<li class=\"LIST\"><label><input class=\"TCK\" type=\"checkbox\"><span id="+ spanid +"class=\"task-content\">" +
         value + 
         "</span>"+"   "+
         dateString+
@@ -186,6 +188,7 @@
         "</label><div class=\"btn-group\"><button class=\"editThis\">編輯</button>"+" "+"<button class=\"js-delete-button\">刪除</button></div></li>");
       //var all_Inputs = $("input[type=textbox]");
       $("#IPT").val("");
+      spanid+€
       updateNum();
     }
 
@@ -206,14 +209,23 @@
 
     //刪除
     function deleteTask(){
-      $(this).closest("li").remove();
-      //$(this).remove();
+      deleteDataId=$(this).data("spanid");
+      var r=confirm("你確定要刪除嗎？")
+      if (r==true){
+      //haroCollection.closet().remove();
+        //id=$(this).data();
+        //$(this).closest("tr").remove();
+        $("body").remove({
+          spanid: deleteDataId
+        });
+        //$(this).data()
+      }
       updateNum();
     }
 
 
     //$(".js-delete-button").on("click",deleteTask);
-    $("#SP").on("click",".js-delete-button",deleteTask);
+    $("#SP").on("click","#js-delete-button",deleteTask);
 
     //.remove() 刪除
 
@@ -296,7 +308,7 @@
       $Task.find(".task-content").text(newTask);
     }
 
-    $("body").on("click",".editThis",editValue);
+    $("body").on("click","#editThis",editValue);
   </script>>
 </body>
 </html>

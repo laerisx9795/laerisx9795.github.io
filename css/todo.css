@@ -1,6 +1,6 @@
 body{
-  background-color: rgb(100,155,100);
-  /*background-image:url(http://i.imgur.com/fbNEY7a.jpg);*/
+  /*background-color: rgb(100,155,100);*/
+  background-image:src(images/sakura.png);
   font-family: 'Dancing Script', cursive;
 }
 #DIV{
